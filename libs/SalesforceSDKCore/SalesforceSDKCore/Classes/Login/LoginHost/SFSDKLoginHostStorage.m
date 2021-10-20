@@ -108,8 +108,6 @@ static NSString * const SFSDKLoginHostNameKey = @"SalesforceLoginHostNameKey";
              */
             if (![self loginHostForHostAddress:customHost]) {
                 [self.loginHostList removeAllObjects];
-                [self.loginHostList addObject:production];
-                [self.loginHostList addObject:sandbox];
                 NSString *sanitizedCustomHost = [customHost stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
                 SFSDKLoginHost *customLoginHost = [SFSDKLoginHost hostWithName:customHost host:sanitizedCustomHost deletable:NO];
                 [self.loginHostList addObject:customLoginHost];
