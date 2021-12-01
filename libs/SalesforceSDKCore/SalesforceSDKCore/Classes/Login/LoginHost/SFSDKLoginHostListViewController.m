@@ -1,10 +1,10 @@
 /*
  SFSDKLoginHostListViewController.m
  SalesforceSDKCore
- 
+
  Created by Kunal Chitalia on 1/22/16.
  Copyright (c) 2016-present, salesforce.com, inc. All rights reserved.
- 
+
  Redistribution and use of this software in source and binary forms, with or without modification,
  are permitted provided that the following conditions are met:
  * Redistributions of source code must retain the above copyright notice, this list of conditions
@@ -15,7 +15,7 @@
  * Neither the name of salesforce.com, inc. nor the names of its contributors may be used to
  endorse or promote products derived from this software without specific prior written
  permission of salesforce.com, inc.
- 
+
  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR
  IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
  FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
@@ -100,11 +100,11 @@ static NSString * const SFDCLoginHostListCellIdentifier = @"SFDCLoginHostListCel
 - (void)showAddLoginHost:(id)sender {
     SFSDKNewLoginHostViewController *detailViewController = [[SFSDKNewLoginHostViewController alloc] initWithStyle:UITableViewStyleGrouped];
     detailViewController.loginHostListViewController = self;
-    
+
     if ([self.delegate respondsToSelector:@selector(hostListViewController:willPresentLoginHostViewController:)]) {
         [self.delegate hostListViewController:self willPresentLoginHostViewController:self];
     }
-    
+
     if (self.navigationController) {
         self.navigationController.delegate = self;
         [self.navigationController pushViewController:detailViewController animated:YES];
@@ -120,7 +120,7 @@ static NSString * const SFDCLoginHostListCellIdentifier = @"SFDCLoginHostListCel
  */
 - (void)resizeContentForPopover {
     CGRect r = [self.tableView rectForSection:0];
-    
+
     CGSize size = CGSizeMake(380, r.size.height);
     self.preferredContentSize = size;
 }
@@ -129,9 +129,6 @@ static NSString * const SFDCLoginHostListCellIdentifier = @"SFDCLoginHostListCel
 
     // Displays the 'Add Server' button only if the MDM policy allows us to.
     SFManagedPreferences *managedPreferences = [SFManagedPreferences sharedPreferences];
-    if (!(managedPreferences.hasManagedPreferences && managedPreferences.onlyShowAuthorizedHosts) && !self.hidesAddButton) {
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showAddLoginHost:)];
-    }
     self.title = [SFSDKResourceUtils localizedString:@"LOGIN_CHOOSE_SERVER"];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc]
                                              initWithTitle:@""
@@ -141,14 +138,14 @@ static NSString * const SFDCLoginHostListCellIdentifier = @"SFDCLoginHostListCel
     if (!self.hidesCancelButton) {
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelLoginPicker:)];
     }
-    
+
     // Make sure the current login host exists.
     NSUInteger index = [self indexOfCurrentLoginHost];
     if (NSNotFound == index) {
         index = 0; // revert to standard in case there is no current login host
         [self applyLoginHostAtIndex:index];
     }
-    
+
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:SFDCLoginHostListCellIdentifier];
 
     // Refresh the UI and make sure the size is correct.
@@ -215,20 +212,20 @@ static NSString * const SFDCLoginHostListCellIdentifier = @"SFDCLoginHostListCel
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Remember if the item being deleted is the current host
         BOOL selectionDeleted = (indexPath.row == [self indexOfCurrentLoginHost]);
-        
+
         // Delete the item
         [tableView beginUpdates];
         [[SFSDKLoginHostStorage sharedInstance] removeLoginHostAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
         [tableView endUpdates];
-        
+
         // Update the current login host if it was deleted
         if (selectionDeleted) {
             [self applyLoginHostAtIndex:0];
             [self makeLoginHostVisibleAtIndex:0];
             [tableView reloadData];
         }
-        
+
         // Update the size now that we've deleted an item
         [self resizeContentForPopover];
     }
@@ -249,7 +246,7 @@ static NSString * const SFDCLoginHostListCellIdentifier = @"SFDCLoginHostListCel
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SFDCLoginHostListCellIdentifier forIndexPath:indexPath];
-    
+
     // Displays the name of the login host or the host itself it no name is specified
     SFSDKLoginHost *loginHost = [[SFSDKLoginHostStorage sharedInstance] loginHostAtIndex:indexPath.row];
     if ([loginHost.name length] > 0) {
@@ -257,7 +254,7 @@ static NSString * const SFDCLoginHostListCellIdentifier = @"SFDCLoginHostListCel
     } else {
         cell.textLabel.text = loginHost.host;
     }
-    
+
     return cell;
 }
 
@@ -266,10 +263,10 @@ static NSString * const SFDCLoginHostListCellIdentifier = @"SFDCLoginHostListCel
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Apply the selected login host
     [self applyLoginHostAtIndex:indexPath.row];
-    
+
     // Reload the table to show the correct row witih the checkmark.
     [tableView reloadData];
-    
+
     // Notify the delegate.
     [self delegateDidSelectLoginHost];
 }

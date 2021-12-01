@@ -1,10 +1,10 @@
 /*
  SFSDKLoginHostStorage.m
  SalesforceSDKCore
- 
+
  Created by Kunal Chitalia on 1/22/16.
  Copyright (c) 2016-present, salesforce.com, inc. All rights reserved.
- 
+
  Redistribution and use of this software in source and binary forms, with or without modification,
  are permitted provided that the following conditions are met:
  * Redistributions of source code must retain the above copyright notice, this list of conditions
@@ -15,7 +15,7 @@
  * Neither the name of salesforce.com, inc. nor the names of its contributors may be used to
  endorse or promote products derived from this software without specific prior written
  permission of salesforce.com, inc.
- 
+
  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR
  IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
  FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
@@ -64,13 +64,17 @@ static NSString * const SFSDKLoginHostNameKey = @"SalesforceLoginHostNameKey";
     if (self) {
         self.loginHostList = [NSMutableArray array];
         SFManagedPreferences *managedPreferences = [SFManagedPreferences sharedPreferences];
-        SFSDKLoginHost *production = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"LOGIN_SERVER_PRODUCTION"] host:@"login.salesforce.com" deletable:NO];
-        SFSDKLoginHost *sandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"LOGIN_SERVER_SANDBOX"] host:@"test.salesforce.com" deletable:NO];
+        SFSDKLoginHost *harmony = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Harmony"] host:@"training1-harmonyschools.cs203.force.com/purple" deletable:NO];
+        SFSDKLoginHost *aldine = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Aldine"] host:@"training07-aldine.cs43.force.com/purple" deletable:NO];
+        SFSDKLoginHost *hisd = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Hisd"] host:@"training15-houstonisd.cs194.force.com/purple" deletable:NO];
+        SFSDKLoginHost *yesprep = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Yesprep"] host:@"training1-yesprep.cs159.force.com/purple" deletable:NO];
 
         // Add the Production and Sandbox login hosts, unless an MDM policy explicitly forbids this.
         if (!(managedPreferences.hasManagedPreferences && managedPreferences.onlyShowAuthorizedHosts)) {
-            [self.loginHostList addObject:production];
-            [self.loginHostList addObject:sandbox];
+            [self.loginHostList addObject:harmony];
+            [self.loginHostList addObject:aldine];
+            [self.loginHostList addObject:hisd];
+            [self.loginHostList addObject:yesprep];
         }
 
         // Load from managed preferences (e.g. MDM).
@@ -104,8 +108,6 @@ static NSString * const SFSDKLoginHostNameKey = @"SalesforceLoginHostNameKey";
              */
             if (![self loginHostForHostAddress:customHost]) {
                 [self.loginHostList removeAllObjects];
-                [self.loginHostList addObject:production];
-                [self.loginHostList addObject:sandbox];
                 NSString *sanitizedCustomHost = [customHost stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
                 SFSDKLoginHost *customLoginHost = [SFSDKLoginHost hostWithName:customHost host:sanitizedCustomHost deletable:NO];
                 [self.loginHostList addObject:customLoginHost];
