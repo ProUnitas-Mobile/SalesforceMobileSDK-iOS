@@ -64,17 +64,21 @@ static NSString * const SFSDKLoginHostNameKey = @"SalesforceLoginHostNameKey";
     if (self) {
         self.loginHostList = [NSMutableArray array];
         SFManagedPreferences *managedPreferences = [SFManagedPreferences sharedPreferences];
-        SFSDKLoginHost *harmony = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Harmony"] host:@"training1-harmonyschools.cs203.force.com/purple" deletable:NO];
-        SFSDKLoginHost *aldine = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Aldine"] host:@"training07-aldine.cs43.force.com/purple" deletable:NO];
-        SFSDKLoginHost *hisd = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Hisd"] host:@"training15-houstonisd.cs194.force.com/purple" deletable:NO];
-        SFSDKLoginHost *yesprep = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Yesprep"] host:@"training1-yesprep.cs159.force.com/purple" deletable:NO];
+        SFSDKLoginHost *aldine = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Aldine ISD"] host:@"training07-aldine.cs43.force.com/purple" deletable:NO];
+        SFSDKLoginHost *harmony = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Harmony Public Schools"] host:@"training1-harmonyschools.cs203.force.com/purple" deletable:NO];
+        SFSDKLoginHost *hisd = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Houston ISD"] host:@"training15-houstonisd.cs194.force.com/purple" deletable:NO];
+        SFSDKLoginHost *yellowstone = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Yellowstone Schools"] host:@"training01-purplehou.cs36.force.com/purple" deletable:NO];
+        SFSDKLoginHost *yesprep = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"YES Prep Public Schools"] host:@"training1-yesprep.cs159.force.com/purple" deletable:NO];
+        SFSDKLoginHost *serviceProviders = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Service Providers"] host:@"slmrest-purple-sense.cs159.force.com" deletable:NO];
 
         // Add the Production and Sandbox login hosts, unless an MDM policy explicitly forbids this.
         if (!(managedPreferences.hasManagedPreferences && managedPreferences.onlyShowAuthorizedHosts)) {
-            [self.loginHostList addObject:harmony];
             [self.loginHostList addObject:aldine];
+            [self.loginHostList addObject:harmony];
             [self.loginHostList addObject:hisd];
+            [self.loginHostList addObject:yellowstone];
             [self.loginHostList addObject:yesprep];
+            [self.loginHostList addObject:serviceProviders];
         }
 
         // Load from managed preferences (e.g. MDM).
