@@ -69,7 +69,7 @@ static NSString * const SFSDKLoginHostNameKey = @"SalesforceLoginHostNameKey";
         SFSDKLoginHost *hisd = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Houston ISD"] host:@"training15-houstonisd.cs194.force.com/purple" deletable:NO];
         SFSDKLoginHost *yellowstone = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Yellowstone Schools"] host:@"training01-purplehou.cs36.force.com/purple" deletable:NO];
         SFSDKLoginHost *yesprep = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"YES Prep Public Schools"] host:@"training1-yesprep.cs159.force.com/purple" deletable:NO];
-        SFSDKLoginHost *serviceProviders = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Service Providers"] host:@"slmrest-purple-sense.cs159.force.com" deletable:NO];
+        SFSDKLoginHost *serviceProviders = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Service Providers"] host:@"purple-sense.force.com" deletable:NO];
 
         // Add the Production and Sandbox login hosts, unless an MDM policy explicitly forbids this.
         if (!(managedPreferences.hasManagedPreferences && managedPreferences.onlyShowAuthorizedHosts)) {
