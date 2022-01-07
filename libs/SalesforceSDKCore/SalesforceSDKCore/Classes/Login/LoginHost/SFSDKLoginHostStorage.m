@@ -64,11 +64,11 @@ static NSString * const SFSDKLoginHostNameKey = @"SalesforceLoginHostNameKey";
     if (self) {
         self.loginHostList = [NSMutableArray array];
         SFManagedPreferences *managedPreferences = [SFManagedPreferences sharedPreferences];
-        SFSDKLoginHost *aldine = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Aldine ISD"] host:@"training07-aldine.cs43.force.com/purple" deletable:NO];
-        SFSDKLoginHost *harmony = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Harmony Public Schools"] host:@"training1-harmonyschools.cs203.force.com/purple" deletable:NO];
-        SFSDKLoginHost *hisd = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Houston ISD"] host:@"training15-houstonisd.cs194.force.com/purple" deletable:NO];
-        SFSDKLoginHost *yellowstone = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Yellowstone Schools"] host:@"training01-purplehou.cs36.force.com/purple" deletable:NO];
-        SFSDKLoginHost *yesprep = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"YES Prep Public Schools"] host:@"training1-yesprep.cs159.force.com/purple" deletable:NO];
+        SFSDKLoginHost *aldine = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Aldine ISD"] host:@"tw-aldine.cs201.force.com/purple" deletable:NO];
+        SFSDKLoginHost *harmony = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Harmony Public Schools"] host:@"tw-harmonyschools.cs36.force.com/purple" deletable:NO];
+        SFSDKLoginHost *hisd = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Houston ISD"] host:@"tw-houstonisd.cs196.force.com/purple" deletable:NO];
+        SFSDKLoginHost *yellowstone = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Yellowstone Schools"] host:@"tw-purplehou.cs36.force.com/purple" deletable:NO];
+        SFSDKLoginHost *yesprep = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"YES Prep Public Schools"] host:@"tw-yesprep.cs203.force.com/purple" deletable:NO];
         SFSDKLoginHost *serviceProviders = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Service Providers"] host:@"purple-sense.force.com" deletable:NO];
 
         // Add the Production and Sandbox login hosts, unless an MDM policy explicitly forbids this.
