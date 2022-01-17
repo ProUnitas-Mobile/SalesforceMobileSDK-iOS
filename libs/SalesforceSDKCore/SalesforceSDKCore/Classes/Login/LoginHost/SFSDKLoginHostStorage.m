@@ -84,6 +84,11 @@ static NSString * const SFSDKLoginHostNameKey = @"SalesforceLoginHostNameKey";
             [self.loginHostList addObject:yellowstone];
             [self.loginHostList addObject:yesprep];
             [self.loginHostList addObject:serviceProviders];
+            [self.loginHostList addObject:aldineSandbox];
+            [self.loginHostList addObject:harmonySandbox];
+            [self.loginHostList addObject:hisdSandbox];
+            [self.loginHostList addObject:yellowstoneSandbox];
+            [self.loginHostList addObject:yesprepSandbox];
         }
 
         // Load from managed preferences (e.g. MDM).
