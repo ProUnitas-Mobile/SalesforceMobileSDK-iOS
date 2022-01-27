@@ -86,6 +86,10 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    static dispatch_once_t firstLunch;
+    dispatch_once(&firstLunch, ^{
+        [self showHostListView];
+    });
     if (self.showNavbar) {
         [self styleNavigationBar:self.navBar];
     }
