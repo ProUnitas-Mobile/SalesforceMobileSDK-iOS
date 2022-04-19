@@ -18,16 +18,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Launching..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cvT-SL-g0s">
-                                <rect key="frame" x="137.5" y="320" width="120.5" height="27.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="144" y="321.5" width="107" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="fzL-AZ-lRy">
-                                <rect key="frame" x="107.5" y="323.5" width="20" height="20"/>
+                                <rect key="frame" x="114" y="323.5" width="20" height="20"/>
                             </activityIndicatorView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppLogo" translatesAutoresizingMaskIntoConstraints="NO" id="R2e-zU-feW">
-                                <rect key="frame" x="152.5" y="220" width="70" height="70"/>
+                                <rect key="frame" x="152.5" y="221.5" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="KUQ-44-nGk"/>
                                     <constraint firstAttribute="height" constant="70" id="rxH-Sh-sqs"/>
