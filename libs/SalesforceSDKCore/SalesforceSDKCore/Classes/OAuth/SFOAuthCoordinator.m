@@ -52,6 +52,7 @@
 @interface SFOAuthCoordinator()
 
 @property (nonatomic) NSString *networkIdentifier;
+@property (nonatomic, strong) UIActivityIndicatorView *indicatorView;
 
 @end
 
@@ -282,10 +283,20 @@
         _view.translatesAutoresizingMaskIntoConstraints = NO;
         _view.customUserAgent = [SalesforceSDKManager sharedManager].userAgentString(@"");
         _view.UIDelegate = self;
+        
+        [_view addSubview:self.indicatorView];
+        self.indicatorView.center = _view.center;
     }
     return _view;
 }
 
+- (UIActivityIndicatorView *)indicatorView {
+    if (!_indicatorView) {
+        _indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleLarge];
+        _indicatorView.hidesWhenStopped = YES;
+    }
+    return _indicatorView;
+}
 
 #pragma mark - Private Methods
 
@@ -736,6 +747,7 @@
 }
 
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
+    [self.indicatorView startAnimating];
     NSURL *url = [webView URL];
     [SFSDKCoreLogger i:[self class] format:@"%@ host=%@ : path=%@", NSStringFromSelector(_cmd), url.host, url.path];
     if ([self.delegate respondsToSelector:@selector(oauthCoordinator:didStartLoad:)]) {
@@ -749,6 +761,7 @@
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation
 {
+    [self.indicatorView stopAnimating];
     if ([self.delegate respondsToSelector:@selector(oauthCoordinator:didFinishLoad:error:)]) {
         [self.delegate oauthCoordinator:self didFinishLoad:webView error:nil];
     }
@@ -783,6 +796,8 @@
     //      -999 The operation couldn't be completed.
     //     -1001 The request timed out.
     
+    [self.indicatorView stopAnimating];
+  
     if ([self.delegate respondsToSelector:@selector(oauthCoordinator:didFinishLoad:error:)]) {
         [self.delegate oauthCoordinator:self didFinishLoad:webView error:error];
     }
