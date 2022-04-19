@@ -80,34 +80,77 @@
                location = "group:AppIcon.appiconset"
                name = "AppIcon.appiconset">
                <FileRef
-                  location = "group:appicon29x29.png">
+                  location = "group:Icon-App-76x76@2x.png">
                </FileRef>
                <FileRef
-                  location = "group:appicon40x40.png">
+                  location = "group:Icon-App-29x29@1x.png">
                </FileRef>
                <FileRef
-                  location = "group:appicon58x58.png">
+                  location = "group:Icon-App-40x40@1x.png">
                </FileRef>
                <FileRef
-                  location = "group:appicon76x76.png">
+                  location = "group:Icon-App-20x20@1x.png">
                </FileRef>
                <FileRef
-                  location = "group:appicon80x80.png">
+                  location = "group:Icon-App-40x40@2x-1.png">
                </FileRef>
                <FileRef
-                  location = "group:appicon87x87.png">
+                  location = "group:Icon-App-20x20@2x-1.png">
                </FileRef>
                <FileRef
-                  location = "group:appicon120x120.png">
+                  location = "group:Icon-App-83.5x83.5@2x.png">
                </FileRef>
                <FileRef
-                  location = "group:appicon152x152.png">
+                  location = "group:Icon-App-29x29@1x-1.png">
                </FileRef>
                <FileRef
-                  location = "group:appicon180x180.png">
+                  location = "group:Icon-App-20x20@3x.png">
+               </FileRef>
+               <FileRef
+                  location = "group:iTunesArtwork@2x.png">
                </FileRef>
                <FileRef
                   location = "group:Contents.json">
+               </FileRef>
+               <FileRef
+                  location = "group:Icon-App-20x20@2x.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Icon-App-29x29@3x.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Icon-App-40x40@2x.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Icon-App-29x29@2x-1.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Icon-App-60x60@3x.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Icon-App-60x60@2x.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Icon-App-76x76@1x.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Icon-App-40x40@3x.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Icon-App-29x29@2x.png">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:AppLogo.imageset"
+               name = "AppLogo.imageset">
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+               <FileRef
+                  location = "group:Icon-App-60x60@3x.png">
+               </FileRef>
+               <FileRef
+                  location = "group:Icon-App-60x60@2x.png">
                </FileRef>
             </Group>
          </Group>
