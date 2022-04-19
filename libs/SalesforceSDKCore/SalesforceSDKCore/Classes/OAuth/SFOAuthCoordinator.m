@@ -743,6 +743,7 @@
 }
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler {
+    [self.indicatorView stopAnimating];
     decisionHandler(WKNavigationResponsePolicyAllow);
 }
 
