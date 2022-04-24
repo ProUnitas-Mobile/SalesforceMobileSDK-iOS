@@ -34,6 +34,8 @@
 #import "SFManagedPreferences.h"
 #import "SFUserAccountManager.h"
 #import "SFSDKViewUtils.h"
+#import "UIColor+SFColors.h"
+
 static NSString * const SFDCLoginHostListCellIdentifier = @"SFDCLoginHostListCellIdentifier";
 
 @interface SFSDKLoginHostListViewController () <UINavigationControllerDelegate>
@@ -50,6 +52,7 @@ static NSString * const SFDCLoginHostListCellIdentifier = @"SFDCLoginHostListCel
     if ([self.delegate respondsToSelector:@selector(hostListViewController:didChangeLoginHost:)]) {
         [self.delegate hostListViewController:self didChangeLoginHost:loginHost];
     }
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"districtSelected"];
 }
 
 /**
@@ -65,6 +68,9 @@ static NSString * const SFDCLoginHostListCellIdentifier = @"SFDCLoginHostListCel
  * Returns the index of the current login host.
  */
 - (NSUInteger)indexOfCurrentLoginHost {
+    if (self.hideSelectedItem) {
+      return NSNotFound;
+    }
     SFUserAccountManager *m = [SFUserAccountManager sharedInstance];
     NSString *currentLoginHost = [m loginHost];
     NSUInteger numberOfLoginHosts = [[SFSDKLoginHostStorage sharedInstance] numberOfLoginHosts];
@@ -140,19 +146,20 @@ static NSString * const SFDCLoginHostListCellIdentifier = @"SFDCLoginHostListCel
     }
 
     // Make sure the current login host exists.
-    NSUInteger index = [self indexOfCurrentLoginHost];
-    if (NSNotFound == index) {
-        index = 0; // revert to standard in case there is no current login host
-        [self applyLoginHostAtIndex:index];
-    }
+//    NSUInteger index = [self indexOfCurrentLoginHost];
+//    if (NSNotFound == index) {
+//        index = 0; // revert to standard in case there is no current login host
+//        [self applyLoginHostAtIndex:index];
+//    }
 
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:SFDCLoginHostListCellIdentifier];
 
     // Refresh the UI and make sure the size is correct.
     [self.tableView reloadData];
-    [self makeLoginHostVisibleAtIndex:index];
+//    [self makeLoginHostVisibleAtIndex:index];
     [self resizeContentForPopover];
     [super viewDidLoad];
+    self.navigationController.view.backgroundColor = [UIColor salesforceBlueColor];
     [self setEdgesForExtendedLayout:UIRectEdgeNone];
 }
 

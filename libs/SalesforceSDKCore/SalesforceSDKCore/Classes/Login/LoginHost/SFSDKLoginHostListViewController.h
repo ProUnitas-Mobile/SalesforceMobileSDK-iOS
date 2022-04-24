@@ -58,6 +58,11 @@ NS_SWIFT_NAME(LoginHostListViewController)
 @property (nonatomic,assign) BOOL hidesAddButton;
 
 /**
+ * Hides the check mark for the selected host.
+ */
+@property (nonatomic,assign) BOOL hideSelectedItem;
+
+/**
  * Adds a new login host. Also updates the underlying storage and refreshes 
  * the list of login hosts.
  * @param host Login host to be added.

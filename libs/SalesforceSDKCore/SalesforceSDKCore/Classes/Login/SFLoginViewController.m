@@ -90,6 +90,14 @@
         [self styleNavigationBar:self.navBar];
     }
     [self setupBackButton];
+    BOOL hasSelectedDistrict = [[NSUserDefaults standardUserDefaults] boolForKey:@"districtSelected"];
+    if (!hasSelectedDistrict) {
+      self.loginHostListViewController.hidesCancelButton = YES;
+      self.loginHostListViewController.hideSelectedItem = YES;
+      SFSDKNavigationController *navController = [[SFSDKNavigationController alloc] initWithRootViewController:self.loginHostListViewController];
+      navController.modalPresentationStyle = UIModalPresentationFullScreen;
+      [self presentViewController:navController animated:YES completion:nil];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
