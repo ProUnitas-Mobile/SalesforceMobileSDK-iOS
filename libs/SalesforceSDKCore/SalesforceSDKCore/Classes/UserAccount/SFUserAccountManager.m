@@ -834,6 +834,9 @@ static NSString * const kSFGenericFailureAuthErrorHandler = @"GenericFailureErro
     NSNotification *loginHostChangedNotification = [NSNotification notificationWithName:kSFNotificationDidChangeLoginHost object:self userInfo:userInfo];
     [[NSNotificationCenter defaultCenter] postNotification:loginHostChangedNotification];
     NSString *sceneId = loginViewController.view.window.windowScene.session.persistentIdentifier;
+    if (!sceneId) {
+        sceneId = [[SFSDKWindowManager sharedManager] defaultScene].session.persistentIdentifier;
+    }
     self.authSessions[sceneId].oauthRequest.loginHost = newLoginHost.host;
     [self restartAuthentication:self.authSessions[sceneId]];
 }

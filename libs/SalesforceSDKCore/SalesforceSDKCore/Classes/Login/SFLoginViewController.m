@@ -90,6 +90,14 @@
         [self styleNavigationBar:self.navBar];
     }
     [self setupBackButton];
+    BOOL hasSelectedDistrict = [[NSUserDefaults standardUserDefaults] boolForKey:@"districtSelected"];
+    if (!hasSelectedDistrict) {
+      self.loginHostListViewController.hidesCancelButton = YES;
+      self.loginHostListViewController.hideSelectedItem = YES;
+      SFSDKNavigationController *navController = [[SFSDKNavigationController alloc] initWithRootViewController:self.loginHostListViewController];
+      navController.modalPresentationStyle = UIModalPresentationFullScreen;
+      [self presentViewController:navController animated:YES completion:nil];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -223,7 +231,7 @@
     UIImage *image = [[SFSDKResourceUtils imageNamed:@"login-window-gear"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(showLoginHost:)];
     settingsButton.accessibilityLabel = [SFSDKResourceUtils localizedString:@"LOGIN_CHOOSE_SERVER"];
-    settingsButton.accessibilityIdentifier = @"choose connection button";
+    settingsButton.accessibilityIdentifier = @"select district button";
     return settingsButton;
 }
 
