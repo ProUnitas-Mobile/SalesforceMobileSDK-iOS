@@ -89,9 +89,11 @@
 #pragma Mark - Mutating Methods
 
 - (void)setObject:(id)object forKey:(id<NSCopying>)aKey {
-    dispatch_barrier_async(self.queue, ^{
-        self.backingDictionary[aKey] = object;
-    });
+    if (aKey) {
+        dispatch_barrier_async(self.queue, ^{
+            self.backingDictionary[aKey] = object;
+        });
+    }
 }
 
 - (void)setObject:(id)object forKeyedSubscript:(id<NSCopying>)aKey {
@@ -99,9 +101,11 @@
 }
 
 - (void)removeObject:(id<NSCopying>)aKey {
-    dispatch_barrier_async(self.queue, ^{
-        [self.backingDictionary removeObjectForKey:aKey];
-    });
+    if (aKey) {
+        dispatch_barrier_async(self.queue, ^{
+            [self.backingDictionary removeObjectForKey:aKey];
+        });
+    }
 }
 
 - (void)removeAllObjects {
