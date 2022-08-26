@@ -75,6 +75,7 @@ static NSString * const SFSDKLoginHostNameKey = @"SalesforceLoginHostNameKey";
         SFSDKLoginHost *hisdSandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Houston ISD Sandbox"] host:@"tw-houstonisd.cs196.force.com/purple" deletable:NO];
         SFSDKLoginHost *yellowstoneSandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Yellowstone Schools Sandbox"] host:@"tw-purplehou.cs36.force.com/purple" deletable:NO];
         SFSDKLoginHost *yesprepSandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"YES Prep Public Schools Sandbox"] host:@"tw-yesprep.cs203.force.com/purple" deletable:NO];
+        SFSDKLoginHost *yesprepPartialSandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"YES Prep Public Schools Partial Sandbox"] host:@"partial-yesprep.cs221.force.com/purple" deletable:NO];
 
         // Add the Production and Sandbox login hosts, unless an MDM policy explicitly forbids this.
         if (!(managedPreferences.hasManagedPreferences && managedPreferences.onlyShowAuthorizedHosts)) {
@@ -89,6 +90,7 @@ static NSString * const SFSDKLoginHostNameKey = @"SalesforceLoginHostNameKey";
             [self.loginHostList addObject:hisdSandbox];
             [self.loginHostList addObject:yellowstoneSandbox];
             [self.loginHostList addObject:yesprepSandbox];
+            [self.loginHostList addObject:yesprepPartialSandbox];
         }
 
         // Load from managed preferences (e.g. MDM).
