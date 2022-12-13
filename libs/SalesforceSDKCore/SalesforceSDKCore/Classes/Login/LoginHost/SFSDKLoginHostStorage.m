@@ -70,13 +70,18 @@ static NSString * const SFSDKLoginHostNameKey = @"SalesforceLoginHostNameKey";
         SFSDKLoginHost *yellowstone = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Yellowstone Schools"] host:@"purplehou.force.com/purple" deletable:NO];
         SFSDKLoginHost *yesprep = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"YES Prep Public Schools"] host:@"yesprep.purplesense.org/purple" deletable:NO];
         SFSDKLoginHost *serviceProviders = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Service Providers"] host:@"purple-sense.force.com" deletable:NO];
-        SFSDKLoginHost *aldineSandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Aldine ISD Sandbox"] host:@"tw-aldine.cs201.force.com/purple" deletable:NO];
-        SFSDKLoginHost *harmonySandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Harmony Public Schools Sandbox"] host:@"tw-harmonyschools.cs36.force.com/purple" deletable:NO];
-        SFSDKLoginHost *hisdSandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Houston ISD Sandbox"] host:@"tw-houstonisd.cs196.force.com/purple" deletable:NO];
-        SFSDKLoginHost *yellowstoneSandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Yellowstone Schools Sandbox"] host:@"tw-purplehou.cs36.force.com/purple" deletable:NO];
-        SFSDKLoginHost *yesprepSandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"YES Prep Public Schools Sandbox"] host:@"tw-yesprep.cs203.force.com/purple" deletable:NO];
+        // SFSDKLoginHost *aldineSandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Aldine ISD Sandbox"] host:@"tw-aldine.cs201.force.com/purple" deletable:NO];
+        // SFSDKLoginHost *harmonySandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Harmony Public Schools Sandbox"] host:@"tw-harmonyschools.cs36.force.com/purple" deletable:NO];
+        // SFSDKLoginHost *hisdSandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Houston ISD Sandbox"] host:@"tw-houstonisd.cs196.force.com/purple" deletable:NO];
+        // SFSDKLoginHost *yellowstoneSandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Yellowstone Schools Sandbox"] host:@"tw-purplehou.cs36.force.com/purple" deletable:NO];
+        // SFSDKLoginHost *yesprepSandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"YES Prep Public Schools Sandbox"] host:@"tw-yesprep.cs203.force.com/purple" deletable:NO];
+        // SFSDKLoginHost *yesprepPartialSandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"YES Prep Public Schools Partial Sandbox"] host:@"partial-yesprep.cs221.force.com/purple" deletable:NO];
+   SFSDKLoginHost *aldineSandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Aldine ISD Sandbox"] host:@"aldine--partial.sandbox.lightning.force.com/lightning/page/home" deletable:NO];
+        SFSDKLoginHost *harmonySandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Harmony Public Schools Sandbox"] host:@"harmonyps--partial.sandbox.lightning.force.com/lightning/page/home" deletable:NO];
+        SFSDKLoginHost *hisdSandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Houston ISD Sandbox"] host:@"hisd--partial.sandbox.lightning.force.com/lightning/page/home" deletable:NO];
+        SFSDKLoginHost *yellowstoneSandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Yellowstone Schools Sandbox"] host:@"prounitas--partial.sandbox.lightning.force.com/lightning/page/home" deletable:NO];
+        SFSDKLoginHost *yesprepSandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"YES Prep Public Schools Sandbox"] host:@"purpleyesprep--partial.sandbox.lightning.force.com/lightning/page/home" deletable:NO];
         SFSDKLoginHost *yesprepPartialSandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"YES Prep Public Schools Partial Sandbox"] host:@"partial-yesprep.cs221.force.com/purple" deletable:NO];
-
         // Add the Production and Sandbox login hosts, unless an MDM policy explicitly forbids this.
         if (!(managedPreferences.hasManagedPreferences && managedPreferences.onlyShowAuthorizedHosts)) {
             [self.loginHostList addObject:aldine];
