@@ -64,10 +64,10 @@ static NSString * const SFSDKLoginHostNameKey = @"SalesforceLoginHostNameKey";
     if (self) {
         self.loginHostList = [NSMutableArray array];
         SFManagedPreferences *managedPreferences = [SFManagedPreferences sharedPreferences];
-        SFSDKLoginHost *aldine = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Aldine ISD"] host:@"aldine.force.com/purple" deletable:NO];
+        SFSDKLoginHost *aldine = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Aldine ISD"] host:@"aldine.purplesense.org/purple" deletable:NO];
         SFSDKLoginHost *harmony = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Harmony Public Schools"] host:@"harmony.purplesense.org/purple" deletable:NO];
         SFSDKLoginHost *hisd = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Houston ISD"] host:@"houstonisd.purplesense.org/purple" deletable:NO];
-        SFSDKLoginHost *yellowstone = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Yellowstone Schools"] host:@"purplehou.force.com/purple" deletable:NO];
+        SFSDKLoginHost *yellowstone = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Yellowstone Schools"] host:@"yellowstone.purplesense.org/purple" deletable:NO];
         SFSDKLoginHost *yesprep = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"YES Prep Public Schools"] host:@"yesprep.purplesense.org/purple" deletable:NO];
         SFSDKLoginHost *kipp = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"KIPP Texas Public Schools"] host:@"purplekipptexas.my.site.com/purple" deletable:NO];
         SFSDKLoginHost *serviceProviders = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Service Providers"] host:@"purple-sense.force.com" deletable:NO];
