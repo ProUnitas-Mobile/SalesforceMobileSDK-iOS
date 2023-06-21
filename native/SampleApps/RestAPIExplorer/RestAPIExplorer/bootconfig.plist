@@ -3,7 +3,9 @@
 <plist version="1.0">
     <dict>
         <key>remoteAccessConsumerKey</key>
-        <string>3MVG98dostKihXN53TYStBIiS8NRTXcbDzn9nHPb3piMElfQDD.kTyHeXjKV9JNUbe5sZeSQ4CVY1Onzpq21N</string>
+        <!-- <string>3MVG98dostKihXN53TYStBIiS8NRTXcbDzn9nHPb3piMElfQDD.kTyHeXjKV9JNUbe5sZeSQ4CVY1Onzpq21N</string> -->
+         <string>3MVG9ux34Ig8G5eqGtsZfUwvvvqAVW2Ud3PsVW_pN.4cd79XOOlxVeK315e2_F6fQyj0DMbKGtlXzPaIdKRtO</string>
+       
         <key>oauthRedirectURI</key>
         <string>com.salesforce.mobilesdk.sample.restapiexplorer://oauth/success</string>
         <key>oauthScopes</key>
