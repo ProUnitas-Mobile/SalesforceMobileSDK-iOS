@@ -82,7 +82,7 @@ static NSString * const SFSDKLoginHostNameKey = @"SalesforceLoginHostNameKey";
         SFSDKLoginHost *hisdSandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Houston ISD Sandbox"] host:@"hisd--partial.sandbox.lightning.force.com/lightning/page/home" deletable:NO];
         SFSDKLoginHost *yellowstoneSandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Yellowstone Schools Sandbox"] host:@"prounitas--partial.sandbox.lightning.force.com/lightning/page/home" deletable:NO];
         SFSDKLoginHost *yesprepSandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"YES Prep Public Schools Sandbox"] host:@"purpleyesprep--partial.sandbox.lightning.force.com/lightning/page/home" deletable:NO];
-        SFSDKLoginHost *yesprepPartialSandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"YES Prep Public Schools Partial Sandbox"] host:@"partial-yesprep.cs221.force.com/purple" deletable:NO];
+        // SFSDKLoginHost *yesprepPartialSandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"YES Prep Public Schools Partial Sandbox"] host:@"partial-yesprep.cs221.force.com/purple" deletable:NO];
         // Add the Production and Sandbox login hosts, unless an MDM policy explicitly forbids this.
         if (!(managedPreferences.hasManagedPreferences && managedPreferences.onlyShowAuthorizedHosts)) {
             [self.loginHostList addObject:aldine];
@@ -97,7 +97,7 @@ static NSString * const SFSDKLoginHostNameKey = @"SalesforceLoginHostNameKey";
             [self.loginHostList addObject:hisdSandbox];
             [self.loginHostList addObject:yellowstoneSandbox];
             [self.loginHostList addObject:yesprepSandbox];
-            [self.loginHostList addObject:yesprepPartialSandbox];
+            // [self.loginHostList addObject:yesprepPartialSandbox];
         }
 
         // Load from managed preferences (e.g. MDM).
@@ -129,12 +129,12 @@ static NSString * const SFSDKLoginHostNameKey = @"SalesforceLoginHostNameKey";
              * This also handles the case where the custom host configured
              * was changed between version updates of the application.
              */
-            if (![self loginHostForHostAddress:customHost]) {
-                [self.loginHostList removeAllObjects];
-                NSString *sanitizedCustomHost = [customHost stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-                SFSDKLoginHost *customLoginHost = [SFSDKLoginHost hostWithName:customHost host:sanitizedCustomHost deletable:NO];
-                [self.loginHostList addObject:customLoginHost];
-            }
+            // if (![self loginHostForHostAddress:customHost]) {
+            //     [self.loginHostList removeAllObjects];
+            //     NSString *sanitizedCustomHost = [customHost stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+            //     SFSDKLoginHost *customLoginHost = [SFSDKLoginHost hostWithName:customHost host:sanitizedCustomHost deletable:NO];
+            //     [self.loginHostList addObject:customLoginHost];
+            // }
         }
 
         // Load from the user defaults.
