@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4F5DDEB621A4B2530024E7F3 /* SFJsonUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5DDEB421A4B2520024E7F3 /* SFJsonUtils.m */; };
 		4F5DDEB721A4B2530024E7F3 /* SFJsonUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F5DDEB521A4B2530024E7F3 /* SFJsonUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		696E914D2AD0AA8B00205884 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 696E914C2AD0AA8B00205884 /* PrivacyInfo.xcprivacy */; };
 		B7136D08216684A700F6A221 /* SalesforceSDKCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7136CFE216684A700F6A221 /* SalesforceSDKCommon.framework */; };
 		B7136D0F216684A700F6A221 /* SalesforceSDKCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = B7136D01216684A700F6A221 /* SalesforceSDKCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B7136D2F216686EB00F6A221 /* SFSDKDatasharingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B7136D29216686EA00F6A221 /* SFSDKDatasharingHelper.m */; };
@@ -21,8 +22,8 @@
 		B7136D5221669DA400F6A221 /* SFLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = B7136D4F21669DA400F6A221 /* SFLogger.m */; };
 		B7136D5621669F7C00F6A221 /* SFDefaultLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = B7136D5421669F7C00F6A221 /* SFDefaultLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B7136D5821669F7C00F6A221 /* SFDefaultLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = B7136D5521669F7C00F6A221 /* SFDefaultLogger.m */; };
-		B7182B012614346B00867BFE /* KeychainItemManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7182B002614346B00867BFE /* KeychainItemManagerTests.swift */; };
-		B77B6CA4260D261C0074BA3C /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B6CA3260D261C0074BA3C /* KeychainManager.swift */; };
+		B7182B012614346B00867BFE /* KeychainHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7182B002614346B00867BFE /* KeychainHelperTests.swift */; };
+		B77B6CA4260D261C0074BA3C /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B6CA3260D261C0074BA3C /* KeychainHelper.swift */; };
 		B77F5CF02170FF74004F3005 /* SFSDKSafeMutableSet.m in Sources */ = {isa = PBXBuildFile; fileRef = B77F5CEA2170FF73004F3005 /* SFSDKSafeMutableSet.m */; };
 		B77F5CF22170FF74004F3005 /* SFSDKSafeMutableDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = B77F5CEB2170FF73004F3005 /* SFSDKSafeMutableDictionary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B77F5CF42170FF74004F3005 /* SFSDKSafeMutableDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = B77F5CEC2170FF73004F3005 /* SFSDKSafeMutableDictionary.m */; };
@@ -46,6 +47,8 @@
 		F27137BF28405BB8003B3D69 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27137BE28405BB8003B3D69 /* ContentView.swift */; };
 		F27137C128405BB9003B3D69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F27137C028405BB9003B3D69 /* Assets.xcassets */; };
 		F27137C428405BB9003B3D69 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F27137C328405BB9003B3D69 /* Preview Assets.xcassets */; };
+		F2F4222328B6CBC90010EF0F /* GenericPasswordItemQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F4222228B6CBC90010EF0F /* GenericPasswordItemQuery.swift */; };
+		F2F4222528B6CBF40010EF0F /* KeychainItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F4222428B6CBF40010EF0F /* KeychainItemManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +71,7 @@
 /* Begin PBXFileReference section */
 		4F5DDEB421A4B2520024E7F3 /* SFJsonUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFJsonUtils.m; sourceTree = "<group>"; };
 		4F5DDEB521A4B2530024E7F3 /* SFJsonUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFJsonUtils.h; sourceTree = "<group>"; };
+		696E914C2AD0AA8B00205884 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		B7136CFE216684A700F6A221 /* SalesforceSDKCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SalesforceSDKCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7136D01216684A700F6A221 /* SalesforceSDKCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SalesforceSDKCommon.h; sourceTree = "<group>"; };
 		B7136D02216684A700F6A221 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,8 +87,8 @@
 		B7136D4F21669DA400F6A221 /* SFLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFLogger.m; sourceTree = "<group>"; };
 		B7136D5421669F7C00F6A221 /* SFDefaultLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFDefaultLogger.h; sourceTree = "<group>"; };
 		B7136D5521669F7C00F6A221 /* SFDefaultLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFDefaultLogger.m; sourceTree = "<group>"; };
-		B7182B002614346B00867BFE /* KeychainItemManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainItemManagerTests.swift; sourceTree = "<group>"; };
-		B77B6CA3260D261C0074BA3C /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		B7182B002614346B00867BFE /* KeychainHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelperTests.swift; sourceTree = "<group>"; };
+		B77B6CA3260D261C0074BA3C /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		B77F5CEA2170FF73004F3005 /* SFSDKSafeMutableSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFSDKSafeMutableSet.m; sourceTree = "<group>"; };
 		B77F5CEB2170FF73004F3005 /* SFSDKSafeMutableDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFSDKSafeMutableDictionary.h; sourceTree = "<group>"; };
 		B77F5CEC2170FF73004F3005 /* SFSDKSafeMutableDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFSDKSafeMutableDictionary.m; sourceTree = "<group>"; };
@@ -109,6 +113,8 @@
 		F27137BE28405BB8003B3D69 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F27137C028405BB9003B3D69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F27137C328405BB9003B3D69 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F2F4222228B6CBC90010EF0F /* GenericPasswordItemQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericPasswordItemQuery.swift; sourceTree = "<group>"; };
+		F2F4222428B6CBF40010EF0F /* KeychainItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainItemManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +144,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		696E914B2AD0AA7300205884 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				696E914C2AD0AA8B00205884 /* PrivacyInfo.xcprivacy */,
+				B7136D02216684A700F6A221 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		B7136CF4216684A700F6A221 = {
 			isa = PBXGroup;
 			children = (
@@ -163,8 +178,8 @@
 			isa = PBXGroup;
 			children = (
 				B7136D182166865A00F6A221 /* Classes */,
+				696E914B2AD0AA7300205884 /* Supporting Files */,
 				B7136D01216684A700F6A221 /* SalesforceSDKCommon.h */,
-				B7136D02216684A700F6A221 /* Info.plist */,
 			);
 			path = SalesforceSDKCommon;
 			sourceTree = "<group>";
@@ -173,7 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				B7136D0E216684A700F6A221 /* Info.plist */,
-				B7182B002614346B00867BFE /* KeychainItemManagerTests.swift */,
+				B7182B002614346B00867BFE /* KeychainHelperTests.swift */,
 				B7D3CAB9218BA32B00780B72 /* SFLoggerTests.m */,
 				B7D3CABB218BC80600780B72 /* SFSDKSafeMutableArrayTests.m */,
 				B7D3CABC218BC80600780B72 /* SFSDKSafeMutableDictionaryTests.m */,
@@ -235,7 +250,9 @@
 		B77B6C9F260CFF1D0074BA3C /* Keychain */ = {
 			isa = PBXGroup;
 			children = (
-				B77B6CA3260D261C0074BA3C /* KeychainManager.swift */,
+				F2F4222228B6CBC90010EF0F /* GenericPasswordItemQuery.swift */,
+				B77B6CA3260D261C0074BA3C /* KeychainHelper.swift */,
+				F2F4222428B6CBF40010EF0F /* KeychainItemManager.swift */,
 			);
 			path = Keychain;
 			sourceTree = "<group>";
@@ -400,6 +417,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				696E914D2AD0AA8B00205884 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +442,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		B7D55E402181691800827C89 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -441,6 +460,7 @@
 		};
 		B7D55E412181696500827C89 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -472,11 +492,13 @@
 				B77F5D172170FFEE004F3005 /* SFPathUtil.m in Sources */,
 				B77F5D1F2171021F004F3005 /* SFTestContext.m in Sources */,
 				B77F5CF82170FF74004F3005 /* SFSDKSafeMutableArray.m in Sources */,
-				B77B6CA4260D261C0074BA3C /* KeychainManager.swift in Sources */,
+				B77B6CA4260D261C0074BA3C /* KeychainHelper.swift in Sources */,
+				F2F4222528B6CBF40010EF0F /* KeychainItemManager.swift in Sources */,
 				B7136D5221669DA400F6A221 /* SFLogger.m in Sources */,
 				B77F5D152170FFEE004F3005 /* SFFileProtectionHelper.m in Sources */,
 				B7136D2F216686EB00F6A221 /* SFSDKDatasharingHelper.m in Sources */,
 				B77F5D232171021F004F3005 /* SFSwiftDetectUtil.m in Sources */,
+				F2F4222328B6CBC90010EF0F /* GenericPasswordItemQuery.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,7 +507,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7D3CABA218BA32B00780B72 /* SFLoggerTests.m in Sources */,
-				B7182B012614346B00867BFE /* KeychainItemManagerTests.swift in Sources */,
+				B7182B012614346B00867BFE /* KeychainHelperTests.swift in Sources */,
 				B7D3CABE218BC80600780B72 /* SFSDKSafeMutableArrayTests.m in Sources */,
 				B7D3CAC0218BC80600780B72 /* SFSDKSafeMutableSetTests.m in Sources */,
 				B7D3CABF218BC80600780B72 /* SFSDKSafeMutableDictionaryTests.m in Sources */,
@@ -571,11 +593,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -629,11 +652,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -655,8 +679,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = SalesforceSDKCommon/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -687,8 +709,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = SalesforceSDKCommon/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -711,7 +731,6 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SalesforceSDKCommonTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -734,7 +753,6 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SalesforceSDKCommonTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -767,7 +785,6 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -801,7 +818,6 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
