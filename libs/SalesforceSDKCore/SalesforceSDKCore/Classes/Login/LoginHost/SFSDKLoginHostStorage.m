@@ -64,40 +64,40 @@ static NSString * const SFSDKLoginHostNameKey = @"SalesforceLoginHostNameKey";
     if (self) {
         self.loginHostList = [NSMutableArray array];
         SFManagedPreferences *managedPreferences = [SFManagedPreferences sharedPreferences];
-        SFSDKLoginHost *aldine = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Aldine ISD"] host:@"aldine.purplesense.org/purple" deletable:NO];
+        SFSDKLoginHost *IDEAHoustonSandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"IDEA Houston Public Schools Sandbox"] host:@"ideahouston--partial.sandbox.lightning.force.com/lightning/page/home" deletable:NO];
         SFSDKLoginHost *harmony = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Harmony Public Schools"] host:@"harmony.purplesense.org/purple" deletable:NO];
         SFSDKLoginHost *hisd = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Houston ISD"] host:@"houstonisd.purplesense.org/purple" deletable:NO];
         SFSDKLoginHost *yellowstone = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Yellowstone Schools"] host:@"yellowstone.purplesense.org/purple" deletable:NO];
         SFSDKLoginHost *yesprep = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"YES Prep Public Schools"] host:@"yesprep.purplesense.org/purple" deletable:NO];
         SFSDKLoginHost *kipp = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"KIPP Texas Public Schools"] host:@"purplekipptexas.my.site.com/purple" deletable:NO];
+        SFSDKLoginHost *cics = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"CICS Public Schools"] host:@"cics.purplesense.org/purple" deletable:NO];
+        SFSDKLoginHost *IDEAHouston = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"IDEA Houston Public Schools"] host:@"ideahouston.purplesense.org/purple" deletable:NO];
         SFSDKLoginHost *serviceProviders = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Service Providers"] host:@"purple-sense.force.com" deletable:NO];
-        // SFSDKLoginHost *aldineSandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Aldine ISD Sandbox"] host:@"tw-aldine.cs201.force.com/purple" deletable:NO];
-        // SFSDKLoginHost *harmonySandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Harmony Public Schools Sandbox"] host:@"tw-harmonyschools.cs36.force.com/purple" deletable:NO];
-        // SFSDKLoginHost *hisdSandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Houston ISD Sandbox"] host:@"tw-houstonisd.cs196.force.com/purple" deletable:NO];
-        // SFSDKLoginHost *yellowstoneSandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Yellowstone Schools Sandbox"] host:@"tw-purplehou.cs36.force.com/purple" deletable:NO];
-        // SFSDKLoginHost *yesprepSandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"YES Prep Public Schools Sandbox"] host:@"tw-yesprep.cs203.force.com/purple" deletable:NO];
-        // SFSDKLoginHost *yesprepPartialSandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"YES Prep Public Schools Partial Sandbox"] host:@"partial-yesprep.cs221.force.com/purple" deletable:NO];
-   SFSDKLoginHost *aldineSandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Aldine ISD Sandbox"] host:@"aldine--partial.sandbox.lightning.force.com/lightning/page/home" deletable:NO];
+        SFSDKLoginHost *aldineSandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Aldine ISD Sandbox"] host:@"aldine--partial.sandbox.lightning.force.com/lightning/page/home" deletable:NO];
         SFSDKLoginHost *harmonySandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Harmony Public Schools Sandbox"] host:@"harmonyps--partial.sandbox.lightning.force.com/lightning/page/home" deletable:NO];
         SFSDKLoginHost *hisdSandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Houston ISD Sandbox"] host:@"hisd--partial.sandbox.lightning.force.com/lightning/page/home" deletable:NO];
         SFSDKLoginHost *yellowstoneSandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"Yellowstone Schools Sandbox"] host:@"prounitas--partial.sandbox.lightning.force.com/lightning/page/home" deletable:NO];
         SFSDKLoginHost *yesprepSandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"YES Prep Public Schools Sandbox"] host:@"purpleyesprep--partial.sandbox.lightning.force.com/lightning/page/home" deletable:NO];
-        // SFSDKLoginHost *yesprepPartialSandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"YES Prep Public Schools Partial Sandbox"] host:@"partial-yesprep.cs221.force.com/purple" deletable:NO];
+        SFSDKLoginHost *cicsSandbox = [SFSDKLoginHost hostWithName:[SFSDKResourceUtils localizedString:@"CICS Public Schools Sandbox"] host:@"purplecics--partialsb.sandbox.lightning.force.com/lightning/page/home" deletable:NO];
         // Add the Production and Sandbox login hosts, unless an MDM policy explicitly forbids this.
         if (!(managedPreferences.hasManagedPreferences && managedPreferences.onlyShowAuthorizedHosts)) {
-            [self.loginHostList addObject:aldine];
+            
+            [self.loginHostList addObject:IDEAHouston];
             [self.loginHostList addObject:harmony];
             [self.loginHostList addObject:hisd];
             [self.loginHostList addObject:yellowstone];
             [self.loginHostList addObject:yesprep];
-               [self.loginHostList addObject:kipp];
+            [self.loginHostList addObject:yellowstone];
+            [self.loginHostList addObject:kipp];
+            [self.loginHostList addObject:cics];
             [self.loginHostList addObject:serviceProviders];
             [self.loginHostList addObject:aldineSandbox];
             [self.loginHostList addObject:harmonySandbox];
             [self.loginHostList addObject:hisdSandbox];
             [self.loginHostList addObject:yellowstoneSandbox];
             [self.loginHostList addObject:yesprepSandbox];
-            // [self.loginHostList addObject:yesprepPartialSandbox];
+            [self.loginHostList addObject:cicsSandbox];
+            [self.loginHostList addObject:IDEAHoustonSandbox];
         }
 
         // Load from managed preferences (e.g. MDM).
@@ -129,12 +129,7 @@ static NSString * const SFSDKLoginHostNameKey = @"SalesforceLoginHostNameKey";
              * This also handles the case where the custom host configured
              * was changed between version updates of the application.
              */
-            // if (![self loginHostForHostAddress:customHost]) {
-            //     [self.loginHostList removeAllObjects];
-            //     NSString *sanitizedCustomHost = [customHost stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-            //     SFSDKLoginHost *customLoginHost = [SFSDKLoginHost hostWithName:customHost host:sanitizedCustomHost deletable:NO];
-            //     [self.loginHostList addObject:customLoginHost];
-            // }
+           
         }
 
         // Load from the user defaults.
